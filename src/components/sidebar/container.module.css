@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+}
+
+.container > div:first-of-type {
+    /* background-color: lightgreen; */
+    background-color: var(--ivory);
+    height: 100vw;
+    width: 15em;
+    box-shadow: 5px 0px 16px -2px #000000;
+}
