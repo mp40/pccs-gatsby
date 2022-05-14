@@ -1,14 +1,18 @@
-import * as React from 'react'
-import Sidebar from '../sidebar'
-import {container} from './layout.module.css'
+import React from "react";
+import PropTypes from "prop-types";
+import Sidebar from "../sidebar";
+import { container } from "./layout.module.css";
 
 const Layout = ({ children }) => {
   return (
     <div className={container}>
-      <Sidebar>
-        {children}
-        </Sidebar>
+      <Sidebar>{children}</Sidebar>
     </div>
-  )
-}
-export default Layout
+  );
+};
+
+Layout.propTypes = {
+  children: PropTypes.elementType.isRequired,
+};
+
+export default Layout;

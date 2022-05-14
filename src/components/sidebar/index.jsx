@@ -1,19 +1,23 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import {container} from './container.module.css'
+import React from "react";
+import PropTypes from "prop-types";
+// import { Link } from "gatsby";
+import { container } from "./container.module.css";
 
-const Sidebar = ({children}) => {
+const Sidebar = ({ children }) => {
   return (
     <div className={container}>
-        <div>
+      <div>
         {/* <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link>
         <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link>
         <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link> */}
-        </div>
-        <div>
-            {children}
-        </div>
+      </div>
+      <div>{children}</div>
     </div>
-  )
-}
-export default Sidebar
+  );
+};
+
+Sidebar.propTypes = {
+  children: PropTypes.elementType.isRequired,
+};
+
+export default Sidebar;
