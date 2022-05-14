@@ -1,8 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Link } from "gatsby";
 
-export const Home = () => {
+export const Component = () => {
   return (
     <main>
       <title>PCCS Tools</title>
@@ -12,7 +11,7 @@ export const Home = () => {
         System
       </p>
       <p>Also visit</p>
-      <a to="https://pccs.herokuapp.com/">PCCS Helper</a>
+      <a href="https://pccs.herokuapp.com/">PCCS Helper</a>
       <p>
         An app for creating and using characters for Phoenix Command Combat
         System
@@ -24,7 +23,7 @@ export const Home = () => {
 const IndexPage = () => {
   return (
     <Layout>
-      <Home />
+      <Component />
     </Layout>
   );
 };
