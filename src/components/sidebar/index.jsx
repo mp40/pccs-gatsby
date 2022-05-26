@@ -1,15 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import { Link } from "gatsby";
-import { container } from "./container.module.css";
+import { Link } from "gatsby";
+import { container } from "./sidebar.module.css";
 
 const Sidebar = ({ children }) => {
   return (
     <div className={container}>
       <div>
-        {/* <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link>
-        <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link>
-        <Link to="https://pccs.herokuapp.com/">PCCS Helper</Link> */}
+        <Link to="/">Home</Link>
+        <Link to="/hand-to-hand">Hand To Hand</Link>
       </div>
       <div>{children}</div>
     </div>
@@ -17,7 +16,7 @@ const Sidebar = ({ children }) => {
 };
 
 Sidebar.propTypes = {
-  children: PropTypes.elementType.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Sidebar;
