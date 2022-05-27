@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.form > label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form > label > span {
+  margin-right: 1em;
+}
