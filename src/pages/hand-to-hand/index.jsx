@@ -146,7 +146,7 @@ export const Component = () => {
   );
 };
 
-const IndexPage = () => {
+const HandToHandPage = () => {
   return (
     <Layout>
       <Component />
@@ -154,4 +154,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default HandToHandPage;
