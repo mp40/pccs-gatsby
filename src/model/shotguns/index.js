@@ -16,28 +16,14 @@ export const pelletSpreadTable = Object.freeze({
   18: 100,
 });
 
-export const getRandomHitLocation = (initialLocation, spread) => {
+export const getRandomHitLocation = (initialLocation, spread, upperLimit) => {
   const min = initialLocation - spread;
   const max = initialLocation + spread;
 
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+  let location = Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const getRandomD100Location = (initialLocation, spread) => {
-  let location = getRandomHitLocation(initialLocation, spread);
-
-  if (location < 0 || location > 99) {
-    location = getRandomD100Location(initialLocation, spread);
-  }
-
-  return location;
-};
-
-export const getRandomD1000Location = (initialLocation, spread) => {
-  let location = getRandomHitLocation(initialLocation, spread);
-
-  if (location < 0 || location > 999) {
-    location = getRandomD1000Location(initialLocation, spread);
+  if (location < 0 || location > upperLimit) {
+    location = getRandomHitLocation(initialLocation, spread, upperLimit);
   }
 
   return location;
