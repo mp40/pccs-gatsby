@@ -9,6 +9,7 @@ const Sidebar = ({ children }) => {
       <div>
         <Link to="/">Home</Link>
         <Link to="/hand-to-hand">Hand To Hand</Link>
+        <Link to="/shotguns">Shotguns</Link>
       </div>
       <div>{children}</div>
     </div>
