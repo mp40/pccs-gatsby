@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../../components/layout";
 import { pelletSpreadTable, getRandomHitLocation } from "../../model/shotguns";
-import { form } from "./shotguns.module.css";
+import { form, locations } from "./shotguns.module.css";
 
 export const Component = () => {
   const [diceType, setDiceType] = useState(1000);
@@ -36,7 +36,7 @@ export const Component = () => {
             max={diceType - 1}
             name="initialLocation"
             value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={(e) => setLocation(Number(e.target.value))}
           />
         </label>
         <label>
@@ -66,7 +66,7 @@ export const Component = () => {
             max="25"
             name="hitCount"
             value={additionalHits}
-            onChange={(e) => setAdditionalHits(e.target.value)}
+            onChange={(e) => setAdditionalHits(Number(e.target.value))}
           />
         </label>
         <label>
@@ -74,7 +74,7 @@ export const Component = () => {
           <select
             value={diceType}
             onChange={(e) => {
-              setDiceType(e.target.value);
+              setDiceType(Number(e.target.value));
             }}
           >
             {[100, 1000].map((d) => {
@@ -94,9 +94,9 @@ export const Component = () => {
         Clear Locations
       </button>
       {randomLocations && (
-        <div>
+        <div className={locations}>
           {randomLocations.map((l, i) => {
-            return <span key={i}>{`${l},`}</span>;
+            return <span key={i}>{l}</span>;
           })}
         </div>
       )}
