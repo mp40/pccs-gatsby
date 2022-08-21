@@ -1,5 +1,8 @@
 import React from "react";
+import { Link } from "gatsby";
 import Layout from "../components/layout";
+import LinkButton from "../components/link-button/LinkButton";
+import { mobileNavigation } from "./home.module.css";
 
 export const Component = () => {
   return (
@@ -10,6 +13,14 @@ export const Component = () => {
         A site for tools and data to assist in using the Phoenix Command Combat
         System
       </p>
+      <div className={mobileNavigation}>
+        <LinkButton>
+          <Link to="/hand-to-hand">Hand To Hand</Link>
+        </LinkButton>
+        <LinkButton>
+          <Link to="/shotguns">Shotguns</Link>
+        </LinkButton>
+      </div>
       <p>Also visit</p>
       <a href="https://pccs.herokuapp.com/">PCCS Helper</a>
       <p>
