@@ -37,3 +37,17 @@
 .table > table > tbody > tr > td:nth-of-type(n + 2) {
   text-align: center;
 }
+
+@media only screen and (max-width: 760px) {
+  .table * th {
+    font-size: 0.75em;
+  }
+
+  .table * td {
+    font-size: 0.85em;
+  }
+
+  .form > label:nth-of-type(-n + 2) {
+    margin-bottom: 1em;
+  }
+}

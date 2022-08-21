@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Sidebar from "../sidebar";
-import { container } from "./layout.module.css";
+import Navigation from "../navigation";
+import { container, page } from "./layout.module.css";
 
 const Layout = ({ children }) => {
   return (
     <div className={container}>
-      <Sidebar>{children}</Sidebar>
+      <Navigation />
+      <div className={page}>{children}</div>
     </div>
   );
 };
