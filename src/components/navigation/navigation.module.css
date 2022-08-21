@@ -1,8 +1,4 @@
 .container {
-  display: flex;
-}
-
-.container > div:first-of-type {
   background-color: var(--ivory);
   height: 100vh;
   width: 15em;
@@ -12,7 +8,7 @@
   flex-direction: column;
 }
 
-.container > div:first-of-type > a {
+.container > a {
   margin-top: 1em;
   margin-left: 1em;
   text-decoration: none;
@@ -20,7 +16,7 @@
   font-weight: 600;
 }
 
-.container > div:first-of-type > a:hover {
+.container > a:hover {
   color: var(--panzer-grey);
   font-weight: 800;
 }

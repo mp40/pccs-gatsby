@@ -1,23 +1,18 @@
 import React from "react";
-import PropTypes from "prop-types";
+import MediaQueryLarge from "../media-query/media-query-large";
 import { Link } from "gatsby";
 import { container } from "./navigation.module.css";
 
-const Navigation = ({ children }) => {
+const Navigation = () => {
   return (
-    <div className={container}>
-      <div>
+    <MediaQueryLarge>
+      <div className={container}>
         <Link to="/">Home</Link>
         <Link to="/hand-to-hand">Hand To Hand</Link>
         <Link to="/shotguns">Shotguns</Link>
       </div>
-      <div>{children}</div>
-    </div>
+    </MediaQueryLarge>
   );
-};
-
-Navigation.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Navigation;

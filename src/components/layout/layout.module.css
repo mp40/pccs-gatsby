@@ -1,4 +1,9 @@
 .container {
   background-color: var(--insignia-white);
-  padding-right: 0.75em;
+  display: flex;
+  height: 100vh;
+}
+
+.page {
+  padding: 0.75em;
 }
