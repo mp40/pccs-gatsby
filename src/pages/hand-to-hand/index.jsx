@@ -111,7 +111,7 @@ export const Component = () => {
               <th>Target Situation</th>
               <th>{`Slash with\nBladed Weapon`}</th>
               <th>{`Slash with\nImpact Head`}</th>
-              <th>Stabbing Points</th>
+              <th>{`Stabbing\nPoints`}</th>
             </tr>
           </thead>
           <tbody>
