@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { container } from "./sidebar.module.css";
 
-const Sidebar = ({ children }) => {
+const Navigation = ({ children }) => {
   return (
     <div className={container}>
       <div>
@@ -16,8 +16,8 @@ const Sidebar = ({ children }) => {
   );
 };
 
-Sidebar.propTypes = {
+Navigation.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Sidebar;
+export default Navigation;

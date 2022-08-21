@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Sidebar from "../sidebar";
+import Navigation from "../navigation";
 import { container } from "./layout.module.css";
 
 const Layout = ({ children }) => {
   return (
     <div className={container}>
-      <Sidebar>{children}</Sidebar>
+      <Navigation>{children}</Navigation>
     </div>
   );
 };
