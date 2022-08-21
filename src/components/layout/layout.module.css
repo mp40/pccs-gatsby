@@ -7,3 +7,10 @@
 .page {
   padding: 0.75em;
 }
+
+@media only screen and (max-width: 760px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
