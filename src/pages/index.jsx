@@ -15,10 +15,13 @@ export const Component = () => {
       </p>
       <div className={mobileNavigation}>
         <LinkButton>
-          <Link to="/hand-to-hand">Hand To Hand</Link>
+          <Link to="/shooting">Shooting</Link>
         </LinkButton>
         <LinkButton>
           <Link to="/shotguns">Shotguns</Link>
+        </LinkButton>
+        <LinkButton>
+          <Link to="/hand-to-hand">Hand To Hand</Link>
         </LinkButton>
       </div>
       <p>Also visit</p>
