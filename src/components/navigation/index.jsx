@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import { container } from "./sidebar.module.css";
+import { container } from "./navigation.module.css";
 
 const Navigation = ({ children }) => {
   return (
