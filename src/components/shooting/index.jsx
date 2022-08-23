@@ -8,6 +8,8 @@ import {
   getMovementMod,
 } from "./data";
 
+import { container, form } from "./shooting.module.css";
+
 const Shooting = () => {
   const [eal, setEal] = useState(null);
   const [gunLevel, setGunLevel] = useState(0);
@@ -41,127 +43,133 @@ const Shooting = () => {
   ]);
 
   return (
-    <div>
+    <div className={container}>
       <span>{`EAL: ${eal}`}</span>
+      <form className={form}>
+        <div>
+          <label>
+            <span>{`ROF: ${auto ? "Auto" : "Single"}`}</span>
+            <br />
+            <span>100% Fun Switch</span>
+            <input
+              type="checkbox"
+              value={auto}
+              onChange={() => {
+                setAuto(!auto);
+              }}
+            ></input>
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Gun Combat Level</span>
+            <select
+              value={gunLevel}
+              onChange={(e) => {
+                setGunLevel(Number(e.target.value));
+              }}
+            >
+              {Object.keys(salTable).map((lvl) => {
+                return (
+                  <option value={lvl} key={lvl}>
+                    {lvl}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          <label>
+            <span>Range</span>
+            <select
+              value={range}
+              onChange={(e) => {
+                setRange(Number(e.target.value));
+              }}
+            >
+              {Object.keys(rangeTable).map((rng) => {
+                return (
+                  <option value={rng} key={rng}>
+                    {rng}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+        </div>
 
-      <form>
-        <label>
-          <span>{`ROF: ${auto ? "Auto" : "Single"}`}</span>
-          <br />
-          <span>100% Fun Switch</span>
-          <input
-            type="checkbox"
-            value={auto}
-            onChange={() => {
-              setAuto(!auto);
-            }}
-          ></input>
-        </label>
-        <br />
-        <label>
-          <span>Gun Combat Level</span>
-          <select
-            value={gunLevel}
-            onChange={(e) => {
-              setGunLevel(Number(e.target.value));
-            }}
-          >
-            {Object.keys(salTable).map((lvl) => {
-              return (
-                <option value={lvl} key={lvl}>
-                  {lvl}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label>
-          <span>Range</span>
-          <select
-            value={range}
-            onChange={(e) => {
-              setRange(Number(e.target.value));
-            }}
-          >
-            {Object.keys(rangeTable).map((rng) => {
-              return (
-                <option value={rng} key={rng}>
-                  {rng}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <br />
-        <label>
-          <span>Shooter Stance</span>
-          <select
-            value={shooterStance}
-            onChange={(e) => {
-              setShooterStance(e.target.value);
-            }}
-          >
-            {Object.keys(shooterStanceMods).map((stance) => {
-              return (
-                <option value={stance} key={stance}>
-                  {stance}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label>
-          <span>Target Size</span>
-          <select
-            value={targetSize}
-            onChange={(e) => {
-              setTargetSize(e.target.value);
-            }}
-          >
-            {Object.keys(targetSizeMods).map((target) => {
-              return (
-                <option value={target} key={target}>
-                  {target}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <br />
-        <label>
-          <span>Shooter Movement</span>
-          <select
-            value={shooterMovement}
-            onChange={(e) => {
-              setShooterMovement(Number(e.target.value));
-            }}
-          >
-            {movement.map((move) => {
-              return (
-                <option value={move} key={move}>
-                  {move}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label>
-          <span>Target Movement</span>
-          <select
-            value={targetMovement}
-            onChange={(e) => {
-              setTargetMovement(Number(e.target.value));
-            }}
-          >
-            {movement.map((move) => {
-              return (
-                <option value={move} key={move}>
-                  {move}
-                </option>
-              );
-            })}
-          </select>
-        </label>
+        <div>
+          <label>
+            <span>Shooter Stance</span>
+            <select
+              value={shooterStance}
+              onChange={(e) => {
+                setShooterStance(e.target.value);
+              }}
+            >
+              {Object.keys(shooterStanceMods).map((stance) => {
+                return (
+                  <option value={stance} key={stance}>
+                    {stance}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          <label>
+            <span>Target Size</span>
+            <select
+              value={targetSize}
+              onChange={(e) => {
+                setTargetSize(e.target.value);
+              }}
+            >
+              {Object.keys(targetSizeMods).map((target) => {
+                return (
+                  <option value={target} key={target}>
+                    {target}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <span>Shooter Movement</span>
+            <select
+              value={shooterMovement}
+              onChange={(e) => {
+                setShooterMovement(Number(e.target.value));
+              }}
+            >
+              {movement.map((move) => {
+                return (
+                  <option value={move} key={move}>
+                    {move}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          <label>
+            <span>Target Movement</span>
+            <select
+              value={targetMovement}
+              onChange={(e) => {
+                setTargetMovement(Number(e.target.value));
+              }}
+            >
+              {movement.map((move) => {
+                return (
+                  <option value={move} key={move}>
+                    {move}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+        </div>
       </form>
     </div>
   );
