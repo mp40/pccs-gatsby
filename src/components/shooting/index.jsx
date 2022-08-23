@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   salTable,
   rangeTable,
+  shooterStanceMods,
   targetSizeMods,
   movement,
   getMovementMod,
@@ -11,6 +12,7 @@ const Shooting = () => {
   const [eal, setEal] = useState(null);
   const [gunLevel, setGunLevel] = useState(0);
   const [range, setRange] = useState(50);
+  const [shooterStance, setShooterStance] = useState("Standing");
   const [targetSize, setTargetSize] = useState("Standing Exposed");
   const [auto, setAuto] = useState(false);
   const [shooterMovement, setShooterMovement] = useState(0);
@@ -20,23 +22,42 @@ const Shooting = () => {
     const sal = salTable[gunLevel];
     const rangeEal = rangeTable[range];
 
-    const sizeEal = targetSizeMods[targetSize][0];
+    const stanceEal = shooterStanceMods[shooterStance];
+    const sizeEal = targetSizeMods[targetSize][auto ? 1 : 0];
 
     const movementEal = getMovementMod(shooterMovement, targetMovement, range);
-    console.log("shooter", shooterMovement);
-    console.log("target", targetMovement);
-    console.log("P>", targetMovement + shooterMovement);
-    console.log("eal>", movementEal);
 
-    const updated = sal + rangeEal + sizeEal + movementEal;
+    const updated = sal + rangeEal + stanceEal + sizeEal + movementEal;
 
     setEal(updated);
-  }, [gunLevel, range, targetSize, shooterMovement, targetMovement]);
+  }, [
+    gunLevel,
+    range,
+    shooterStance,
+    targetSize,
+    shooterMovement,
+    targetMovement,
+    auto,
+  ]);
 
   return (
     <div>
       <span>{`EAL: ${eal}`}</span>
+
       <form>
+        <label>
+          <span>{`ROF: ${auto ? "Auto" : "Single"}`}</span>
+          <br />
+          <span>100% Fun Switch</span>
+          <input
+            type="checkbox"
+            value={auto}
+            onChange={() => {
+              setAuto(!auto);
+            }}
+          ></input>
+        </label>
+        <br />
         <label>
           <span>Gun Combat Level</span>
           <select
@@ -72,6 +93,23 @@ const Shooting = () => {
           </select>
         </label>
         <br />
+        <label>
+          <span>Shooter Stance</span>
+          <select
+            value={shooterStance}
+            onChange={(e) => {
+              setShooterStance(e.target.value);
+            }}
+          >
+            {Object.keys(shooterStanceMods).map((stance) => {
+              return (
+                <option value={stance} key={stance}>
+                  {stance}
+                </option>
+              );
+            })}
+          </select>
+        </label>
         <label>
           <span>Target Size</span>
           <select

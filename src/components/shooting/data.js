@@ -77,6 +77,15 @@ export const targetSizeMods = {
   "Low Prone": [1, 0, 5],
 };
 
+export const shooterStanceMods = {
+  Standing: 0,
+  "Standing & Braced ": 4,
+  Kneeling: 3,
+  "Kneeling & Braced": 5,
+  Prone: 6,
+  "Prone & Braced": 7,
+};
+
 export const movement = [0, 0.25, 0.5, 1, 1.5, 2, 2.5, 3];
 
 // HPI: [10, 20, 40, 70, 100]
