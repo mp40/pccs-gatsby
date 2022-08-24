@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+}
+
+.left {
+  margin-right: 2.5em;
+}
+
+.left > div:first-of-type {
+  margin-bottom: 1em;
+}
+
+.left > div:first-of-type > button:nth-of-type(2) {
+  margin-left: 0.25em;
+}
+
+.left > div:nth-of-type(n + 2) {
+  margin-bottom: 0.75em;
+  padding-bottom: 0.5em;
+  box-shadow: 0px 1px 0px 0px var(--usaf-light-grey);
+}
+
+.container > div:nth-of-type(2) {
+  width: 7em;
+}
