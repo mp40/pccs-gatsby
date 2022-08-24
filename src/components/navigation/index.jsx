@@ -7,8 +7,9 @@ const Navigation = () => {
     <>
       <div className={container}>
         <Link to="/">Home</Link>
-        <Link to="/hand-to-hand">Hand To Hand</Link>
+        <Link to="/shooting">Shooting</Link>
         <Link to="/shotguns">Shotguns</Link>
+        <Link to="/hand-to-hand">Hand To Hand</Link>
       </div>
       <div className={smallContainer}>
         <Link to="/">Home</Link>
