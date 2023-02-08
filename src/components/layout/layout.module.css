@@ -1,7 +1,7 @@
 .container {
   background-color: var(--insignia-white);
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .page {
