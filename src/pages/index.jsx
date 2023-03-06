@@ -25,7 +25,7 @@ export const Component = () => {
         </LinkButton>
       </div>
       <p>Also visit</p>
-      <a href="https://pccs.herokuapp.com/">PCCS Helper</a>
+      <a href="https://pccs-helper.vercel.app/">PCCS Helper</a>
       <p>
         An app for creating and using characters for Phoenix Command Combat
         System
